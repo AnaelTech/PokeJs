@@ -3,8 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <title>Pokemon JS</title>
+    <link rel="icon" type="image/png" href="assets/pokeball.png"/>
   </head>
+  <style>
+    html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    image-rendering: pixelated;
+    }
+    canvas {
+      background: #eee;
+      display: block;
+      width: 100%;
+    }
+  </style>
   <body>
-    <script src="game.js"></script>
+    <canvas id="myCanvas"></canvas>
+    <script type="module" src="game.js"></script>
   </body>
 </html>
