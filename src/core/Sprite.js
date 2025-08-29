@@ -26,7 +26,7 @@ export class Sprite {
         this.width = width;
         this.height = height;
         this.frame = frame;
-        this.frameMap = new Map();
+        this.frameMap = new Map(); 
         this.vFrame = vFrame;
         this.hFrame = hFrame;
         this.buildFrameMap();
