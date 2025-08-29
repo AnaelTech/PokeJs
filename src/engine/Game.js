@@ -1,3 +1,5 @@
-function loop(){
+export class Game {
+ constructor(){
     
+ }
 }

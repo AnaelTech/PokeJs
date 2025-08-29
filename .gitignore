@@ -32,3 +32,5 @@ Thumbs.db
 *.zip
 *.tmp
 *.bak
+
+assets/audio/song-theme.mp3

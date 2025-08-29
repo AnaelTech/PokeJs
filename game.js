@@ -59,7 +59,14 @@ const draw = () => {
 
 const player = new Player(hero, 5, canvas.width, canvas.height);
 const movePlayer = new Input(player);
+const song = new Audio("assets/audio/song-theme.mp3"); 
+song.loop = true;
 
+const startAudioOnce = () => {
+    song.play().catch(() => {
+    });
+};
+window.addEventListener("keydown", startAudioOnce, { once: true });
 
 function gameLoop(){
     window.requestAnimationFrame(gameLoop);
