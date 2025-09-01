@@ -1,13 +1,19 @@
 export class Input {
-    constructor(player){
+    constructor(player, menu = null){
         this.player = player;
+        this.menu = menu;
         document.addEventListener("keydown", (e) => {
             //console.log(e.code);
             this.move(e);
         })
+        
     }
 
     move(e){
+        if(this.menu && this.menu.menuOpen){
+            return;
+        }
+
         switch(e.code){
             case "ArrowUp":
                 this.player.moveUp();

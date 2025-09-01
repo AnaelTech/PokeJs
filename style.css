@@ -2,10 +2,19 @@ html, body {
     margin: 0 !important;
     padding: 0 !important;
     image-rendering: pixelated;
+    overflow: hidden;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     }
 
 canvas {
       background: #eee;
       display: block;
-      width: 100%;
+      max-width: 90vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
     }
