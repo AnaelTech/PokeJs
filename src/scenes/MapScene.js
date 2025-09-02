@@ -70,7 +70,7 @@ export class MapScene {
         ];
     }
 
-    // Boîte englobante d'un polygone (pour rejet rapide)
+    // Boîte englobante d'un polygone
     static polygonAABB(points) {
         let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
         for (const p of points) {
@@ -156,7 +156,6 @@ export class MapScene {
         return false;
     }
 
-    // Dis: "ai-je tapé une brique si je vais ici?"
     // nextRect est la future boîte du joueur: { x, y, width, height }
     isColliding(nextRect) {
         if (!this.ready) return false; // si pas chargé, on laisse passer
