@@ -1,15 +1,15 @@
-import { MapScene } from "./src/scenes/MapScene.js";
+import { Game } from "./src/engine/Game.js";
 
 const canvas = document.querySelector("#myCanvas");
 const ctx = canvas.getContext("2d");
 
-const scene = new MapScene(canvas);
-if (scene.onEnter) scene.onEnter();
+const game = new Game(canvas);
+if (game.onEnter) game.onEnter();
 
 function loop() {
-	if(scene.update) scene.update();
+	if(game.update) game.update();
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	scene.draw(ctx);
+	game.draw(ctx);
 	requestAnimationFrame(loop);
 }
 

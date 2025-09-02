@@ -1,7 +1,8 @@
 export class Input {
-    constructor(player, menu = null){
+    constructor(player, menu = null, mapScene = null){
         this.player = player;
         this.menu = menu;
+        this.mapScene = mapScene; // Référence à la scène pour contrôler la musique
         document.addEventListener("keydown", (e) => {
             //console.log(e.code);
             this.move(e);
@@ -9,6 +10,10 @@ export class Input {
         
     }
 
+    /**
+     * Gére les saisies clavier en écoutant les touches sélectionné
+     * @param {} e -
+     */
     move(e){
         if(this.menu && this.menu.menuOpen){
             return;
@@ -26,6 +31,12 @@ export class Input {
                 break;
             case "ArrowRight":
                 this.player.moveRight();
+                break;
+            case "KeyM":
+                // Contrôle de la musique
+                if(this.mapScene && this.mapScene.toggleMusic) {
+                    this.mapScene.toggleMusic();
+                }
                 break;
         }
     }

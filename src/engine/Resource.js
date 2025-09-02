@@ -3,7 +3,8 @@ class Resources {
     constructor(){
         this.toLoad = {
             map: "assets/sprites/map.png",
-            hero: "assets/sprites/hero.png"
+            hero: "assets/sprites/hero.png",
+            bgBattle: "assets/battles/battle.png"
         };
 
         this.images = {};

@@ -139,7 +139,7 @@ pokemon-like/
 
 - [x] Afficher carte
 - [x] Déplacement tu personnages
-- [ ] Gérer la musique (start, stop )
+- [x] Gérer la musique (start, stop )
 - [ ] Ajouter les collisions
 - [ ] Intéragir avec Menu en cours de jeu
 - [ ] Ajout d'un menu avant de lancer le jeu

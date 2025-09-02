@@ -32,7 +32,9 @@ export class Sprite {
         this.buildFrameMap();
     }
 
-    
+    /**
+     * 
+     */
     buildFrameMap(){
         let frameCount = 0;
         for (let v = 0; v < this.vFrame; v++){
@@ -47,6 +49,10 @@ export class Sprite {
         }
     }
 
+    /**
+     * 
+     * @param {*} ctx 
+     */
     draw(ctx){
         const imageResource = this.image; // C'est l'objet avec {image, isLoaded}
 

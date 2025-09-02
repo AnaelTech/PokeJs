@@ -1,0 +1,6 @@
+{
+  "zones": [
+    { "name": "Foin", "x": 290, "y": 690, "width": 60, "height": 60 },
+    { "name": "Garden", "x": 965, "y": 420, "width": 60, "height": 60 }
+  ]
+}

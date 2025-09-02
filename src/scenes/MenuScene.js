@@ -6,6 +6,10 @@ export class MenuScene {
         this.menuOpen = false;
     }
 
+    /**
+     * 
+     * @param {*} e 
+     */
     handleKeyPress(e){
         if (e.code === "Escape"){
             e.preventDefault(); // Empêche le comportement par défaut
@@ -13,16 +17,28 @@ export class MenuScene {
         }
     }
 
+    /**
+     * 
+
+     */
     toggleMenu(){
         this.menuOpen = !this.menuOpen;
     }
 
+    /**
+     * 
+     * @param {*} ctx 
+     */
     draw(ctx){
         if (this.menuOpen) {
             this.drawMenu(ctx);
         }
     }
 
+    /**
+     * 
+     * @param {*} ctx 
+     */
     drawMenu(ctx){
         // Fond semi-transparent sur tout l'écran
         ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
