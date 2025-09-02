@@ -1,4 +1,4 @@
-import { resources } from "../engine/Resource.js";
+import { Resources } from "../engine/Resource.js";
 import { Sprite } from "../core/Sprite.js";
 import { Utils } from "../core/Utils.js";
 import { Player } from "../game/Player.js";
@@ -14,17 +14,20 @@ export class Game {
     this.canvas = canvas;
             this.ctx = canvas.getContext("2d");
     
-            // Dimensions du canvas (ratio 16:9 ou dimensions fixes)
+            // Dimensions du canvas
             // Math.min retourne le nombre qui a la valeur la plus basse 
             this.canvas.width = Math.min(window.innerWidth * 0.9, 1200);
             this.canvas.height = Math.min(window.innerHeight * 0.9, 675);
-    
+            console.log(window.innerWidth);
+            console.log(window.innerHeight);
             // Dimensions de la map
             this.mapW = 1597;
             this.mapH = 1277;
 
             this.battleW = 1536;
             this.battleH = 1024;
+
+            this.resources = new Resources();
     
             // Player setup
             const SPRITE_WIDTH = 512;
@@ -32,7 +35,7 @@ export class Game {
             const START_PLAYER = new Utils(1075, 355);
     
             this.hero = new Sprite(
-                resources.images.hero,
+                this.resources.images.hero,
                 0, 0,
                 SPRITE_WIDTH, SPRITE_HEIGHT,
                 START_PLAYER,
@@ -41,7 +44,6 @@ export class Game {
             );
             
 
-            // Player
             // Scène de carte pour charger les collisions depuis Tiled
             // On pointe vers le JSON: assets/sprites/mapObstacle.json
             this.mapScene = new MapScene("assets/sprites/mapObstacle.json", this.ctx);
@@ -128,7 +130,7 @@ export class Game {
             this.camera.apply(ctx);
     
             // Dessiner la map
-            const map = resources.images.map;
+            const map = this.resources.images.map;
             if (map.isLoaded) {
                 ctx.drawImage(map.image, 0, 0, this.mapW, this.mapH);
             }
@@ -136,7 +138,7 @@ export class Game {
             // Dessine le joueur
             this.hero.draw(ctx);
     
-            // Dessin debug des collisions (mettre this.mapScene.showDebug = true pour voir)
+            // Dessin debug des collisions
             this.mapScene?.drawDebug(ctx);
 
             ctx.restore();
@@ -145,7 +147,7 @@ export class Game {
             this.drawControls(ctx);
         }   
         else if(this.gameState === "battle"){
-              const bg = resources.images.bgBattle;
+              const bg = this.resources.images.bgBattle;
                  if(bg.isLoaded){
                     this.ctx.drawImage(bg.image, 0, 0, this.canvas.width, this.canvas.height);
                  }
@@ -158,7 +160,7 @@ export class Game {
     
         /**
          * Affiche les indications de contrôles sur l'écran
-         * @param {CanvasRenderingContext2D} ctx - Le contexte de rendu
+         * 
          */
         drawControls(ctx) {
             ctx.save();
@@ -196,12 +198,4 @@ export class Game {
             this.song.toggle();
         }
 
-        
-        /**
-         * 
-         */
-        onExit() {
-            try { this.song && this.song.pause(); } catch {}
-            this.input && this.input.dispose();
-        }
  }

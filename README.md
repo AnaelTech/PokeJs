@@ -2,6 +2,11 @@
 
 Projet d’apprentissage autour de l’API Canvas (vanilla JavaScript). On affiche une carte, un héros animé déplaçable au clavier, un overlay de menu (WIP) et une musique de fond.
 
+l'API Canvas c'est quoi ?
+
+l'API Canvas permet de dessiner des graphiques grâce à Javascript et le html <canvas>.
+Il est utilisé pour la génération d'animation, de graphisme de jeux, de faire de la 2D ou même 3D.
+
 - Canvas HTML5, JS modules ES6
 - Aucune lib de rendu externe
 - Lancement via un serveur statique (live-server)
@@ -44,6 +49,10 @@ Cela ouvre le jeu sur index.html. Si rien ne s’ouvre, visitez l’URL indiqué
 - Déplacements bornés aux limites du canvas
 - Boucle de rendu simple (requestAnimationFrame)
 - Musique de fond en boucle via un wrapper Audio
+
+## Outils 
+
+- Tiled : https://www.mapeditor.org/
 
 ## Structure du projet
 
@@ -129,10 +138,37 @@ pokemon-like/
 ## API Javascript
 
 - Math.max -> [source Math.max Mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max)
+
 - Math.min -> [source Math.min Mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min)
+
 - new Map() -> [source Map Mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+>[!NOTE]  
+> Map permet de stocker des éléments sous forme de clé-valeur et garde l'ordre d'insertion des clés.
+> Je l'ai utilisé pour l'enregistrement des positions de mes sprites.
+
+
 - new Audio() -> [source Audio Mdn](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio)
+>[!NOTE]  
+> Audio lui nous permet de gérer les sons dans notre navigateur lancer une musique l'arrêter, etc...
+
 - requestAnimationFrame -> [source requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame)
+>[!NOTE]  
+> Il est utilisé pour indiquer aux navigateurs qu'on effectue une animation. Cela rend l'animation de déplacement de mon personnage plus fluide par exemple.
+
+## Problèmatique
+
+J'ai rencontré énormément de problématiques sur les collisions ainsi que l'utilisation des données venant de mon fichier `assets/sprites/mapObstacle.json`
+Je n'avais pas les connaissances pour un algorithme aussi poussé.
+J'ai dû utiliser l'IA pour réussir à utiliser les données. Vous trouverez en haut des pages AI lorsque j'en ai utilisé.
+
+J'ai encore du mal dans l'organisation de mon projet et la séparation de mon code
+
+## Amélioration
+
+- Intéragir avec le menu
+- Ajouter un menu d'arrivé avant de lancer le jeux
+- Ajouter des intéractions avec des pnj
+- Ajouter des maps de plus pour avoir différentes scènes
 
 
 ## TODO 
@@ -140,7 +176,7 @@ pokemon-like/
 - [x] Afficher carte
 - [x] Déplacement tu personnages
 - [x] Gérer la musique (start, stop )
-- [ ] Ajouter les collisions
+- [x] Ajouter les collisions
 - [ ] Intéragir avec Menu en cours de jeu
 - [ ] Ajout d'un menu avant de lancer le jeu
 - [ ] Ajout des combats

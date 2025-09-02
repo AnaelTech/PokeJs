@@ -38,6 +38,7 @@ export class Input {
                     this.mapScene.toggleMusic();
                 }
                 break;
+            
         }
     }
 }

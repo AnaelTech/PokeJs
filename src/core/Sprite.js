@@ -44,7 +44,7 @@ export class Sprite {
                     new Utils(h, v)
                 )
                 frameCount++;
-                //console.log(this.frameMap);
+                console.log(this.frameMap);
             }
         }
     }

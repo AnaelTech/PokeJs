@@ -15,6 +15,8 @@ function loop() {
 
 requestAnimationFrame(loop);
 
-
+// setInterval(()=> {
+//     game.draw()
+// }, 300)
 
 

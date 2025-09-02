@@ -35,10 +35,9 @@ export class Camera {
     }
 
     /**
-     * Applique la transformation de caméra au contexte de rendu
-     * Translate le contexte pour afficher la bonne partie du monde
-     * @param {CanvasRenderingContext2D} ctx - Le contexte 2D du canvas
-     */
+     * Applique la transformation de caméra au rendu
+     * 
+     * */
     apply(ctx){
         // Applique une transformation de translation négative pour simuler le mouvement de caméra
         // setTransform(scaleX, skewX, skewY, scaleY, translateX, translateY)
