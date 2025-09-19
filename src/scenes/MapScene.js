@@ -11,7 +11,7 @@ export class MapScene {
     // - Poly: { type: 'poly', points: [{x,y}...], aabb: {x,y,width,height} }
     this.colliders = [];
         this.ready = false;  // true quand le JSON est chargé
-        this.showDebug = false; // passe à true pour voir les collisions en rouge
+        this.showDebug = true; // passe à true pour voir les collisions en rouge
 
         // On lance le chargement du JSON tout de suite
         this.loadMap(src);

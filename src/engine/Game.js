@@ -59,8 +59,12 @@ export class Game {
                 (nextRect) => this.mapScene?.isColliding(nextRect)
             );
     
-            // Menu
-            this.menu = new MenuScene();
+            // Menu avec callbacks
+            this.menu = new MenuScene({
+                onToggleMusic: () => this.toggleMusic(),
+                onRestart: () => window.location.reload(),
+                isMusicPlaying: () => this.song?.isPlaying === true,
+            });
     
             // Caméra
             this.camera = new Camera(this.canvas.width, this.canvas.height, this.mapW, this.mapH);
